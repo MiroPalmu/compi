@@ -1,14 +1,11 @@
-####################################################################################################
-# Tests
-####################################################################################################
-
-
+# List of tests that can run in parallel
 single_threaded_unit_tests = [
     'test_unit_test'
 ]
 
 single_threaded_test_names_and_exes = {}
 
+# Create test executables:
 foreach test_name : single_threaded_unit_tests
     single_threaded_test_names_and_exes += {test_name :
         executable(
@@ -20,10 +17,6 @@ foreach test_name : single_threaded_unit_tests
     }
 
 endforeach
-
-####################################################################################################
-# Running tests
-####################################################################################################
 
 foreach test_name, test_exe : single_threaded_test_names_and_exes
     test(
