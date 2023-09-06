@@ -13,13 +13,17 @@ project_include_directories += include_directories('include')
 # Subprojects (using meson wraps)
 ut = subproject('ut')
 
-project_dependencies = [dependency('ut')]
+project_dependencies = [
+  dependency('ut'),
+  dependency('mpi', language : 'cpp')
+]
 
 # Project sources
 project_sources = []
 
 # Subdirectors
 subdir('docs')
+subdir('examples')
 subdir('include')
 subdir('src')
 subdir('tests')
